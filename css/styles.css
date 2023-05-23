@@ -971,9 +971,10 @@ button {
     transition: transform var(--animation);
 }
 
-.footer-input:focus+.footer-subscr-text {
+.footer-input:focus+.footer-subscr-text,
+.footer-input:not(:placeholder-shown)+.footer-subscr-text {
     transform: translateY(-40px);
-    left: 0;
+
 }
 
 
@@ -1146,6 +1147,7 @@ label {}
 .form-wrapper {
     position: relative;
     margin-bottom: 8px;
+
 }
 
 .form-field {
@@ -1155,11 +1157,16 @@ label {}
     border: 1px solid rgba(46, 47, 66, 0.4);
     padding: 0;
     padding-left: 38px;
+    outline: transparent;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
 
 }
 
 .form-field:focus {
     border: 1px solid rgba(77, 90, 229, 1);
+
 }
 
 .form-icon {
@@ -1168,6 +1175,7 @@ label {}
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -1192,8 +1200,15 @@ label {}
 
 
     color: rgba(46, 47, 66, 0.4);
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    outline: transparent;
 
 
+}
+
+.form-comment:focus {
+    border: 1px solid rgba(77, 90, 229, 1);
 }
 
 .form-agreement {
